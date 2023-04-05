@@ -1,4 +1,5 @@
 import LoadingOrError from 'components/LoadingOrError';
+import Header from 'pages/Header';
 import type { ReactElement } from 'react';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -12,6 +13,7 @@ export default function App(): ReactElement {
   return (
     <BrowserRouter>
       <Suspense fallback={<LoadingOrError />}>
+        <Header />
         <Routes>
           <Route path='/' element={<Gallery />} />
           <Route path=':fruitName' element={<Details />} />

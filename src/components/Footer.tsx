@@ -13,7 +13,7 @@ export default function Footer(): ReactElement {
     <div className='fixed bottom-0 flex h-20 w-full items-center justify-around bg-white'>
       {footerIcons.map(item => (
         <div
-          className='flex flex-col items-center justify-center'
+          className='flex basis-1/5 flex-col items-center justify-center'
           key={item.title}
         >
           <IconSvg
