@@ -9,7 +9,7 @@ function Header(): ReactElement {
       <div className='flex-grow text-lg font-bold text-black'>My Wallet</div>
 
       <IconSvg iconName='notification' iconColorClass='bg-slate w-8 h-8' />
-      <IconSvg iconName='more' iconColorClass='bg-slate w-8 h-8' />
+      <IconSvg iconName='more' iconColorClass='bg-slate w-8 h-8 ml-4' />
     </div>
   );
 }
