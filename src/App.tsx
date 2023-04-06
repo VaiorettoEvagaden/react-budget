@@ -1,3 +1,4 @@
+import ButtonAdd from 'components/ButtonAdd';
 import LoadingOrError from 'components/LoadingOrError';
 import Header from 'pages/Header';
 import type { ReactElement } from 'react';
@@ -19,6 +20,7 @@ export default function App(): ReactElement {
           <Route path=':fruitName' element={<Details />} />
           <Route path='/wallet' element={<Wallet />} />
         </Routes>
+        <ButtonAdd />
         <Footer />
       </Suspense>
     </BrowserRouter>

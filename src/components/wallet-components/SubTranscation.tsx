@@ -14,14 +14,18 @@ function SubTranscation({
   colorType,
   iconName
 }: SubTranscationProperties): ReactElement {
-  const iconColorClass = `fill-${colorType}-400`;
-  const iconBgColorClass = `bg-${colorType}-100`;
   return (
     <div className='flex h-32 basis-[48%] flex-col items-center justify-center rounded-2xl border'>
-      <div className={`rounded-full p-1 ${iconBgColorClass}`}>
+      <div
+        className={`rounded-full p-1 ${
+          colorType === 'rose' ? 'bg-rose-100' : 'bg-cyan-100'
+        }`}
+      >
         <IconSvg
           iconName={iconName}
-          iconColorClass={`h-8 w-8 ${iconColorClass}`}
+          iconColorClass={`h-8 w-8 ${
+            colorType === 'rose' ? 'fill-rose-400' : 'fill-cyan-400'
+          }`}
         />
       </div>
       <div className='my-1 text-sm text-slate-400'>{type}</div>
