@@ -1,5 +1,4 @@
 import type { ReactElement } from 'react';
-import { useState } from 'react';
 // import './Modal.css';
 
 interface ModalProperties {
@@ -9,10 +8,10 @@ interface ModalProperties {
 }
 
 function Modal({ isOpen, onClose, children }: ModalProperties): ReactElement {
-  const [isVisible, setIsVisible] = useState<boolean>(isOpen);
+  // const [isVisible, setIsVisible] = useState<boolean>(isOpen);
 
   const onClickHandler = (): void => {
-    setIsVisible(false);
+    // setIsVisible(false);
     // if (onClose) {
     onClose();
     // }
@@ -20,17 +19,16 @@ function Modal({ isOpen, onClose, children }: ModalProperties): ReactElement {
   // const handleKeyDown = onClick;
 
   return (
-    <div className={`modal ${isVisible ? 'modal--visible' : ''}`}>
-      <div
-        role='button'
-        className='modal__overlay'
-        onClick={onClickHandler}
-        onKeyDown={onClickHandler}
-        tabIndex={0}
-      >
-        123
-      </div>
-      <div className='modal__content'>{children}</div>
+    <div
+      role='button'
+      onClick={onClickHandler}
+      onKeyDown={onClickHandler}
+      tabIndex={0}
+      className={`${
+        isOpen ? 'visible' : 'invisible'
+      } fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black/50 `}
+    >
+      <div className='h-1/2 w-1/2 bg-white'>{children}</div>
     </div>
   );
 }

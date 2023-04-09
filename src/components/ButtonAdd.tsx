@@ -6,12 +6,16 @@ import Modal from './Modal';
 // interface ButtonAddProperties {}
 
 function ButtonAdd(): ReactElement {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [amount, setAmount] = useState<number>();
   const onClickHandler = (): void => {
     setIsVisible(true);
   };
   const onCloseHandler = (): void => {
     setIsVisible(false);
+  };
+  const onInputHandler = (value: number): void => {
+    setAmount(value);
   };
   return (
     <>
@@ -23,7 +27,8 @@ function ButtonAdd(): ReactElement {
         <IconSvg iconName='add' iconColorClass='fill-white w-8 h-8' />
       </button>
       <Modal isOpen={isVisible} onClose={onCloseHandler}>
-        <div>111</div>
+        <div>金额</div>
+        <input type='text' value={amount} onInput={onInputHandler} />
       </Modal>
     </>
   );
